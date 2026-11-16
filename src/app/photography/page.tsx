@@ -4,7 +4,11 @@ import PhotographyPage from '@/components/photography/PhotographyPage';
 
 export function generateMetadata(): Metadata {
   const gallery = getPhotography();
-  return { title: gallery.title, description: gallery.description };
+  return {
+    title: gallery.title,
+    description: gallery.description,
+    alternates: { canonical: '/photography/' },
+  };
 }
 
 export default function Photography() {

@@ -3,6 +3,7 @@ import CVPage from '@/components/pages/CVPage';
 
 export const metadata: Metadata = {
     title: 'Curriculum Vitae',
+    alternates: { canonical: '/cv/' },
 };
 
 export default function CurriculumVitaePage() {
