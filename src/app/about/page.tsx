@@ -128,7 +128,7 @@ function loadPageDataForLocale(locale: string | undefined): HomePageLocaleData {
 }
 
 export const metadata: Metadata = {
-  title: { absolute: 'Yao Yao · Political Science, University of Georgia' },
+  title: { absolute: 'Yao Yao, PhD Candidate in Political Science, University of Georgia' },
   description:
     'Yao Yao is a PhD candidate in Political Science at the University of Georgia who studies executive politics, the separation of powers, and democratic accountability.',
   alternates: { canonical: '/about/' },

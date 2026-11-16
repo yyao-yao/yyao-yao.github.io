@@ -36,7 +36,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: openGraphLocale,
       title: config.site.title,
       description: config.site.description,
-      siteName: `${config.author.name}'s Academic Website`,
+      siteName: config.author.name,
     },
   };
 }
@@ -159,6 +159,30 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: buildLocaleBootstrapScript(runtimeI18n),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@graph': [
+                {
+                  '@type': 'WebSite',
+                  name: 'Yao Yao',
+                  alternateName: ['姚瑶', 'Yao Yao, University of Georgia'],
+                  url: 'https://yyao-yao.github.io/',
+                },
+                {
+                  '@type': 'Person',
+                  name: 'Yao Yao',
+                  alternateName: '姚瑶',
+                  url: 'https://yyao-yao.github.io/about/',
+                  jobTitle: 'PhD Candidate in Political Science',
+                  affiliation: { '@type': 'CollegeOrUniversity', name: 'University of Georgia' },
+                },
+              ],
+            }),
           }}
         />
       </head>
